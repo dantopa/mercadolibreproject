@@ -1,0 +1,16 @@
+<div class="main col-md-12">
+  <div class="main-search col-md-10">
+    <div class="logo col-md-1">
+      <img [src]="'assets/Logo_ML.png'">
+    </div>
+    <div class="search-bar-container col-md-11">
+      <input fxFlex="95" class="search-input"
+             [formControl]="searchForm"
+             (keydown.enter)="search()"
+             placeholder="Nunca dejes de buscar">
+      <button (click)="search()" fxFlex="5" class="search-button">
+        <img [src]="'assets/ic_Search.png'" class="search-icon">
+      </button>
+    </div>
+  </div>
+</div>

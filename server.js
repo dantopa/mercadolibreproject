@@ -15,7 +15,6 @@ app.listen(8000, () => {
 
 app.route('/api/items').get((req, res) => {
   const query = req.query['q'];
-  console.log(query);
   const limit = 4;
   const url = "https://api.mercadolibre.com";
   const endpoint = url + '/sites/MLA/search?q=' + query + '&limit=' + limit;

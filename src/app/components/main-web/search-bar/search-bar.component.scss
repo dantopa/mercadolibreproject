@@ -1,0 +1,29 @@
+.main {
+  background-color: #FFE600;
+  display: flex;
+  justify-content: center;
+  padding: 12px;
+}
+
+.main-search {
+  display: flex;
+  justify-content: space-between;
+}
+
+input {
+  font-size: 18px;
+  padding: 7px;
+  border-radius: 5px 0 0 5px;
+  border: none
+}
+
+.search-button {
+  background-color: #EEEE;
+  border-radius: 0 5px 5px 0;
+  border: none;
+}
+
+.search-button:hover {
+  background-color: #dddbcc;
+}
+

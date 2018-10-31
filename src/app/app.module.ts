@@ -3,8 +3,11 @@ import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http';
-import {MainWebModule} from './main-web/main-web.module';
+import {MainWebModule} from './components/main-web/main-web.module';
 import {BaseService} from './services/base.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MaterialModule} from './material.module';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -12,9 +15,12 @@ import {BaseService} from './services/base.service';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     HttpClientModule,
     AppRoutingModule,
-    MainWebModule
+    MainWebModule,
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [
     BaseService

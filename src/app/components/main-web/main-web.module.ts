@@ -4,13 +4,22 @@ import {SearchBarComponent} from './search-bar/search-bar.component';
 import {ResultsComponent} from './results/results.component';
 import {DetailComponent} from './detail/detail.component';
 import {MainWebComponent} from './main-web.component';
-import {ItemsService} from '../services/items.service';
 import {HttpClientModule} from '@angular/common/http';
+import {ItemsService} from '../../services/items.service';
+import {MaterialModule} from '../../material.module';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {BrowserModule} from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   imports: [
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    MaterialModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserModule,
+    BrowserAnimationsModule,
   ],
   declarations: [
     SearchBarComponent,
