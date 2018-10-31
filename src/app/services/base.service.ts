@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import {Injectable, Optional} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 interface Header {
@@ -13,7 +13,7 @@ export class BaseService {
   baseUrl = 'http://localhost:8000/api/';
   url: string;
 
-  constructor(private endpoint,
+  constructor(@Optional() endpoint: string,
               private http: HttpClient) {
     this.url = this.baseUrl + endpoint;
   }
@@ -35,6 +35,6 @@ export class BaseService {
   }
 
   search(query: any) {
-    return this.http.get(this.url + 'q?=' + query, this.getHeader());
+    return this.http.get(this.url + '?q=' + query, this.getHeader());
   }
 }

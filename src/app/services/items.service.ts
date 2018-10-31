@@ -7,8 +7,8 @@ import {BaseService} from './base.service';
 })
 export class ItemsService extends BaseService {
 
-  constructor(endpoint = 'items',
-              http: HttpClient) {
-    super(endpoint, http);
+  static endpoint = 'items';
+  constructor(http: HttpClient) {
+    super(ItemsService.endpoint, http);
   }
 }

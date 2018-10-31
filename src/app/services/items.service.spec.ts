@@ -1,11 +1,13 @@
 import { TestBed, inject } from '@angular/core/testing';
 
 import {ItemsService} from './items.service';
+import {HttpClientModule} from '@angular/common/http';
 
-describe('MLAPIService', () => {
+describe('ItemsService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [ItemsService]
+      providers: [ItemsService],
+      imports: [HttpClientModule]
     });
   });
 

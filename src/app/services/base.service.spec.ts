@@ -1,11 +1,13 @@
-import { TestBed, inject } from '@angular/core/testing';
+import {inject, TestBed} from '@angular/core/testing';
 
-import { BaseService } from './base.service';
+import {BaseService} from './base.service';
+import {HttpClientModule} from '@angular/common/http';
 
-describe('BaseServiceService', () => {
+describe('BaseService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [BaseService]
+      providers: [BaseService],
+      imports: [HttpClientModule]
     });
   });
 
