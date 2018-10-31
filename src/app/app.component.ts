@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import {MLAPIService} from './services/mlapi.service';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +7,5 @@ import {MLAPIService} from './services/mlapi.service';
 })
 export class AppComponent {
 
-  constructor(private MLService: MLAPIService) {}
-  ngO
+  constructor() {}
 }

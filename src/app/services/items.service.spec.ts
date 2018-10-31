@@ -1,15 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { MLAPIService } from './mlapi.service';
+import {ItemsService} from './items.service';
 
 describe('MLAPIService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [MLAPIService]
+      providers: [ItemsService]
     });
   });
 
-  it('should be created', inject([MLAPIService], (service: MLAPIService) => {
+  it('should be created', inject([ItemsService], (service: ItemsService) => {
     expect(service).toBeTruthy();
   }));
 });
