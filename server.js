@@ -26,26 +26,37 @@ app.route('/api/items').get((req, res) => {
       let data = JSON.parse(body);
       let items = [];
       let categories = [];
+      try {
+        const catResuls = data.filters[0].values[0].path_from_root;
+        catResuls.forEach(function (category) {
+          categories.push(category.name);
+        });
+      } catch (e) {
+        console.log("Categories not found");
+      }
+      console.log(categories);
       data.results.map(item => {
-        categories.push(item.category_id);
         items.push({
           "id": item.id,
           "title": item.title,
           "price": {
             "currency": item.currency_id,
-            "amount": item.price,
-            // "decimals": item.decimals
+            "amount": Math.floor(item.price),
+            "decimals":
+              !(item.price % 1 === null || item.price % 1 === undefined) ?
+                Math.ceil(item.price % 1 * 100) : 0
           },
           "picture": item.thumbnail,
           "condition": item.condition,
-          "free_shipping": item.shipping.free_shipping
+          "free_shipping": item.shipping.free_shipping,
+          "location": item.address.state_name
         })
       });
       let result = {
-        // "author": {
-        //   "name": item.name,
-        //   "lastname": item.lastname
-        // },
+        "author": {
+          "name": "Patricio",
+          "lastname": "D'Andrea"
+        },
         "categories": categories,
         "items": items
       };

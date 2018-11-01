@@ -6,9 +6,9 @@
     <div class="search-bar-container col-md-11">
       <input fxFlex="95" class="search-input"
              [formControl]="searchForm"
-             (keydown.enter)="search()"
+             (keydown.enter)="goResults()"
              placeholder="Nunca dejes de buscar">
-      <button (click)="search()" fxFlex="5" class="search-button">
+      <button (click)="goResults()" fxFlex="5" class="search-button">
         <img [src]="'assets/ic_Search.png'" class="search-icon">
       </button>
     </div>

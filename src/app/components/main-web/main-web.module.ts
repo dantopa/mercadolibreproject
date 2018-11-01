@@ -10,6 +10,8 @@ import {MaterialModule} from '../../material.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {ItemComponent} from './item/item.component';
+import {PointReplacerPipe} from '../../pipes/point-replacer.pipe';
 
 @NgModule({
   imports: [
@@ -19,13 +21,15 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     FormsModule,
     ReactiveFormsModule,
     BrowserModule,
-    BrowserAnimationsModule,
+    BrowserAnimationsModule
   ],
   declarations: [
     SearchBarComponent,
     ResultsComponent,
     DetailComponent,
-    MainWebComponent
+    MainWebComponent,
+    ItemComponent,
+    PointReplacerPipe
   ],
   exports: [
     MainWebComponent,

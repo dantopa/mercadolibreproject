@@ -1,6 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, EventEmitter, Output} from '@angular/core';
 import {ItemsService} from '../../../services/items.service';
 import {FormControl} from '@angular/forms';
+import {Product, ProductResults} from '../../../models/Product';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-search-bar',
@@ -9,26 +11,27 @@ import {FormControl} from '@angular/forms';
 })
 export class SearchBarComponent implements OnInit {
 
-  searchForm: FormControl = new FormControl();
+  @Output()
+  resultsEvent = new EventEmitter<Product[]>();
 
-  constructor(private itemsService: ItemsService) {
+  searchForm: FormControl = new FormControl();
+  results: ProductResults;
+
+  constructor(private itemsService: ItemsService,
+              private router: Router) {
   }
 
   ngOnInit() {
 
   }
 
-  search() {
-    console.log(this.searchForm.value);
+  goResults() {
     if (this.searchForm.value) {
-      this.itemsService.search(this.searchForm.value).subscribe(
-        res => {
-          console.log(res);
-        },
-        error1 => {
-          console.log(error1);
-        }
-      );
+      const query = this.searchForm.value;
+      this.router.navigate(['items'], {queryParams: {search: query}})
+        .catch(
+          error1 => console.log(error1)
+        );
     }
   }
 

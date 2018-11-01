@@ -1,0 +1,22 @@
+<mat-card class="main-product col-md-12">
+  <div class="picture-container col-md-3">
+    <img src="{{product?.picture}}" alt="" class="picture">
+  </div>
+  <div class="details col-md-6">
+    <div class="price">
+      <span *ngIf="product.price.currency === 'USD'" class="usd-currency">US</span>$
+      <span>
+        {{product?.price?.amount | pointReplacer }},{{product?.price?.decimals}}
+        <mat-icon class="free_shipping" *ngIf="product?.free_shipping">
+          local_shipping
+        </mat-icon>
+      </span>
+    </div>
+    <div class="description">
+      {{product?.title}}
+    </div>
+  </div>
+  <div class="location col-md-3">
+    {{product.location}}
+  </div>
+</mat-card>

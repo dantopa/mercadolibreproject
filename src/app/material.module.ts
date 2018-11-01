@@ -1,6 +1,14 @@
 import {NgModule} from '@angular/core';
 
-import {MatButtonModule, MatCardModule, MatIconModule, MatInputModule, MatMenuModule, MatToolbarModule} from '@angular/material';
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatIconModule,
+  MatInputModule,
+  MatMenuModule,
+  MatProgressSpinnerModule,
+  MatToolbarModule
+} from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
 
 @NgModule({
@@ -11,7 +19,8 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     MatIconModule,
     MatCardModule,
     MatInputModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatProgressSpinnerModule
   ],
   exports: [
     MatButtonModule,
@@ -20,7 +29,8 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     MatIconModule,
     MatCardModule,
     MatInputModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatProgressSpinnerModule
   ]
 })
 export class MaterialModule {

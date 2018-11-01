@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ProductResults} from '../../models/Product';
 
 @Component({
   selector: 'app-main-web',
@@ -11,5 +12,4 @@ export class MainWebComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }
