@@ -1,8 +1,8 @@
 <mat-card class="main-product col-md-12">
-  <div class="picture-container col-md-3">
+  <div class="picture-container">
     <img src="{{product?.picture}}" alt="" class="picture">
   </div>
-  <div class="details col-md-6">
+  <div class="details col-md-7">
     <div class="price">
       <span *ngIf="product.price.currency === 'USD'" class="usd-currency">US</span>$
       <span>

@@ -1,3 +1,5 @@
+@import "../../../../styles";
+
 .main-results {
   flex-direction: column;
 }
@@ -8,6 +10,13 @@
 
 .categories {
   display: flex;
+  margin: $red-margin 0;
+  font-size: 16px;
+  color: #999;
+}
+
+.final-category {
+  color: $dark-grey;
 }
 
 .products-list {

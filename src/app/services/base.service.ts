@@ -1,5 +1,6 @@
 import {Injectable, Optional} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {Observable} from 'rxjs';
 
 interface Header {
   headers: HttpHeaders;
@@ -34,7 +35,7 @@ export class BaseService {
     return this.http.get(this.url + id, this.getHeader());
   }
 
-  search(query: any) {
+  search(query: any): Observable<any> {
     return this.http.get(this.url + '?q=' + query, this.getHeader());
   }
 }

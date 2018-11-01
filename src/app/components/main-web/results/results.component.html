@@ -7,10 +7,12 @@
     <div *ngIf="results && !loading" class="results-box col-md-10">
       <div *ngIf="results.categories" class="categories">
         <div *ngFor="let category of results.categories; let i=index" class="category">
-          {{ category }}
-          <span *ngIf="i !== results.categories.length - 1" class="caret">
-          >
-        </span>
+          <span *ngIf="i !== results.categories.length - 1" class="parent-category">
+            {{ category }} >&nbsp;
+          </span>
+          <span *ngIf="i === results.categories.length - 1" class="final-category">
+            {{ category }}
+          </span>
         </div>
       </div>
       <div *ngIf="products" class="products-list">
