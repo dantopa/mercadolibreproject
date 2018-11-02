@@ -1,4 +1,4 @@
-import {Injectable, Optional} from '@angular/core';
+import {Optional} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
@@ -6,9 +6,6 @@ interface Header {
   headers: HttpHeaders;
 }
 
-@Injectable({
-  providedIn: 'root'
-})
 export class BaseService {
 
   baseUrl = 'http://localhost:8000/api/';
