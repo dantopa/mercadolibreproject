@@ -1,7 +1,7 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { MainWebComponent } from './main-web.component';
-import {MainWebModule} from './main-web.module';
+import {MainWebComponent} from './main-web.component';
+import {AppModule} from '../../app.module';
 
 describe('MainWebComponent', () => {
   let component: MainWebComponent;
@@ -9,7 +9,7 @@ describe('MainWebComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [MainWebModule]
+      imports: [AppModule]
     })
     .compileComponents();
   }));

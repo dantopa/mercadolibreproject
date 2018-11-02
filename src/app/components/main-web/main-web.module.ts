@@ -12,7 +12,8 @@ import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ItemComponent} from './item/item.component';
 import {PointReplacerPipe} from '../../pipes/point-replacer.pipe';
-import { CategoriesComponent } from './categories/categories.component';
+import {CategoriesComponent} from './categories/categories.component';
+import {AppRoutingModule} from '../../app-routing.module';
 
 @NgModule({
   imports: [
@@ -22,7 +23,7 @@ import { CategoriesComponent } from './categories/categories.component';
     FormsModule,
     ReactiveFormsModule,
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   declarations: [
     SearchBarComponent,
@@ -37,7 +38,9 @@ import { CategoriesComponent } from './categories/categories.component';
     MainWebComponent,
     SearchBarComponent
   ],
-  providers: [ItemsService]
+  providers: [
+    ItemsService,
+  ]
 })
 export class MainWebModule {
 }

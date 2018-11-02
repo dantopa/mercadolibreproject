@@ -8,6 +8,8 @@ import {BaseService} from './services/base.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MaterialModule} from './material.module';
 import {FormsModule} from '@angular/forms';
+import {APP_BASE_HREF} from '@angular/common';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -20,10 +22,12 @@ import {FormsModule} from '@angular/forms';
     AppRoutingModule,
     MainWebModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    RouterModule.forRoot([]),
   ],
   providers: [
-    BaseService
+    BaseService,
+    {provide: APP_BASE_HREF, useValue: ''}
   ],
   bootstrap: [AppComponent],
   schemas: []
