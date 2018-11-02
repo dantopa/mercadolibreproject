@@ -1,10 +1,10 @@
 <div *ngIf="categories" class="categories">
   <div *ngFor="let category of categories; let i=index" class="category">
-          <span *ngIf="i !== categories.length - 1" class="parent-category">
-            {{ category }} >&nbsp;
-          </span>
+    <span *ngIf="i !== categories.length - 1" class="parent-category">
+      {{ category }} >&nbsp;
+    </span>
     <span *ngIf="i === categories.length - 1" class="final-category">
-            {{ category }}
-          </span>
+      {{ category }}
+    </span>
   </div>
 </div>
