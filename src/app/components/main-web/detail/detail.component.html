@@ -1,3 +1,50 @@
-<p>
-  detail works!
-</p>
+<div fxFlex="100" class="main-detail">
+  <app-search-bar fxFlex="100"></app-search-bar>
+  <div class="container col-md-12">
+    <div *ngIf="loading" class="loading">
+      <mat-spinner [diameter]="35"></mat-spinner>
+    </div>
+    <div *ngIf="result && !loading" class="details-box col-md-10">
+      <app-categories [categories]="result?.categories"></app-categories>
+      <mat-card *ngIf="detail" class="full-detail">
+        <div class="detail">
+          <div class="image-box">
+            <img src="{{detail.picture}}" alt="Image" class="image">
+          </div>
+          <div class="buy-options">
+            <div class="status">
+              {{getCondition(detail.condition)}} - {{detail.sold_quantity}} vendidos
+            </div>
+            <div class="title">
+              {{detail.title}}
+            </div>
+            <div class="price">
+              <span *ngIf="detail.price.currency === 'USD'" class="usd-currency">US</span>$
+              <span>
+                {{detail?.price?.amount | pointReplacer }},{{detail?.price?.decimals}}
+                <mat-icon class="free_shipping" *ngIf="detail?.free_shipping">
+                  local_shipping
+                </mat-icon>
+              </span>
+            </div>
+            <div class="buy">
+              <button class="buy-button">
+                Comprar
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="description col-md-7">
+          <div class="title-description">
+            Descripción del Producto
+          </div>
+          <div [innerHTML]="detail?.description" class="text-description">
+          </div>
+        </div>
+      </mat-card>
+    </div>
+    <mat-error align="center" class="error">
+      {{errorMsg}}
+    </mat-error>
+  </div>
+</div>

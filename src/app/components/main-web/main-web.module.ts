@@ -12,6 +12,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ItemComponent} from './item/item.component';
 import {PointReplacerPipe} from '../../pipes/point-replacer.pipe';
+import { CategoriesComponent } from './categories/categories.component';
 
 @NgModule({
   imports: [
@@ -29,7 +30,8 @@ import {PointReplacerPipe} from '../../pipes/point-replacer.pipe';
     DetailComponent,
     MainWebComponent,
     ItemComponent,
-    PointReplacerPipe
+    PointReplacerPipe,
+    CategoriesComponent
   ],
   exports: [
     MainWebComponent,

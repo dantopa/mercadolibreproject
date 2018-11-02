@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Product, ProductResults} from '../../../models/Product';
 import {ItemsService} from '../../../services/items.service';
 import {ActivatedRoute, Router} from '@angular/router';
+import {isNullOrUndefined} from 'util';
 
 @Component({
   selector: 'app-results',
@@ -13,7 +14,8 @@ export class ResultsComponent implements OnInit {
   results: ProductResults;
   products: Product[];
   query: string;
-  loading: boolean;
+  loading = false;
+  errorMsg = '';
 
   constructor(private itemsService: ItemsService,
               private router: Router,
@@ -21,11 +23,15 @@ export class ResultsComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('en results');
     this.route.queryParams.subscribe(
       params => {
+        this.errorMsg = '';
         this.query = params['search'];
-        this.search(this.query);
+        if (!isNullOrUndefined(this.query)) {
+          this.search(this.query);
+        } else {
+          this.errorMsg = 'Debe buscar algo primero.';
+        }
       },
       error1 => {
         console.log(error1);
@@ -38,11 +44,10 @@ export class ResultsComponent implements OnInit {
       res => {
         this.results = res;
         this.products = res.items;
-        console.log("resultados");
-        console.log(this.results);
         this.loading = false;
       },
       error1 => {
+        this.errorMsg = 'Error al buscar los datos.';
         console.log(error1);
       }
     );

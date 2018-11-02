@@ -35,4 +35,10 @@ export class SearchBarComponent implements OnInit {
     }
   }
 
+  goHome() {
+    this.router.navigate([''])
+      .catch(
+        error1 => console.log(error1)
+      );
+  }
 }

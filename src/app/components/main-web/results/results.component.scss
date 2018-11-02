@@ -8,17 +8,6 @@
   flex-direction: column;
 }
 
-.categories {
-  display: flex;
-  margin: $red-margin 0;
-  font-size: 16px;
-  color: #999;
-}
-
-.final-category {
-  color: $dark-grey;
-}
-
 .products-list {
   display: flex;
   flex-direction: column;
@@ -27,4 +16,10 @@
 .container {
   display: flex;
   justify-content: center;
+  background-color: $super-light-grey;
+  min-height: 100vh;
+}
+
+.loading {
+  margin-top: 20px
 }

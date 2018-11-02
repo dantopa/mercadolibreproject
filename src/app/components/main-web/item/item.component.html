@@ -1,9 +1,10 @@
 <mat-card class="main-product col-md-12">
   <div class="picture-container">
-    <img src="{{product?.picture}}" alt="" class="picture">
+    <img (click)="goToDetail(product?.id)"
+         src="{{product?.picture}}" alt="" class="picture">
   </div>
   <div class="details col-md-7">
-    <div class="price">
+    <div (click)="goToDetail(product?.id)" class="price">
       <span *ngIf="product.price.currency === 'USD'" class="usd-currency">US</span>$
       <span>
         {{product?.price?.amount | pointReplacer }},{{product?.price?.decimals}}
@@ -12,11 +13,8 @@
         </mat-icon>
       </span>
     </div>
-    <div class="description">
-      {{product?.title}}
-    </div>
+    <div (click)="goToDetail(product?.id)"
+         [innerHTML]="product?.title" class="description"></div>
   </div>
-  <div class="location col-md-3">
-    {{product.location}}
-  </div>
+  <div [innerHTML]="product.location" class="location col-md-3"></div>
 </mat-card>

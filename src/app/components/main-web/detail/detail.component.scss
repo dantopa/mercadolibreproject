@@ -1,0 +1,91 @@
+@import "../../../../styles";
+
+.main-detail {
+  flex-direction: column;
+}
+
+.details-box {
+  flex-direction: column;
+}
+
+.full-detail {
+  display: flex;
+  flex-direction: column;
+  padding: $green-margin
+}
+
+.detail {
+  display: flex;
+}
+
+.image-box {
+  width: 680px;
+}
+
+.image {
+  width: 100%;
+  max-height: 680px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  background-color: $super-light-grey;
+  min-height: 100vh;
+}
+
+.loading {
+  margin-top: 20px
+}
+
+.title-description {
+  font-size: 28px;
+  color: $dark-grey;
+  margin: $green-margin 0;
+}
+
+.text-description {
+  font-size: 16px;
+  color: $light-grey;
+}
+
+.buy-options {
+  margin: 0 $green-margin;
+}
+
+.status {
+  font-size: 14px;
+  margin-bottom: $red-margin
+}
+
+.title {
+  font-size: 24px;
+  color: $black
+}
+
+.price {
+  font-size: 46px;
+  color: $black;
+  margin: $green-margin 0;
+}
+
+.free_shipping {
+  color: green;
+  font-size: 30px;
+  position: absolute;
+  margin-left: 10px;
+  top: 200px;
+}
+
+.buy-button {
+  border-radius: 4px;
+  border: none;
+  background-color: $light-blue;
+  color: white;
+  width: 100%;
+  padding: 10px;
+}
+
+.buy-button:hover {
+  background-color: #1868e0
+}

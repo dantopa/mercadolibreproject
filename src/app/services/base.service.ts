@@ -27,15 +27,11 @@ export class BaseService {
     };
   }
 
-  getCollection() {
-    return this.http.get(this.url, this.getHeader());
+  protected get(id: string): Observable<any> {
+    return this.http.get(this.url + '/' + id, this.getHeader());
   }
 
-  get(id: number) {
-    return this.http.get(this.url + id, this.getHeader());
-  }
-
-  search(query: any): Observable<any> {
+  protected search(query: any): Observable<any> {
     return this.http.get(this.url + '?q=' + query, this.getHeader());
   }
 }

@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import {ProductResults} from '../../models/Product';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-main-web',

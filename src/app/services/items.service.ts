@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {BaseService} from './base.service';
-import {ProductResults} from '../models/Product';
+import {ProductDetailResult, ProductResults} from '../models/Product';
 import {Observable} from 'rxjs';
 
 @Injectable({
@@ -14,6 +14,9 @@ export class ItemsService extends BaseService {
     super(ItemsService.endpoint, http);
   }
 
+  getProductDetails(id: string): Observable<ProductDetailResult> {
+    return this.get(id);
+  }
   searchProducts(query): Observable<ProductResults> {
     return this.search(query);
   }

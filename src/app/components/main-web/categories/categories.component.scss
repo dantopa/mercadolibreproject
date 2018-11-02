@@ -1,0 +1,11 @@
+@import "../../../../styles";
+.categories {
+  display: flex;
+  margin: $red-margin 0;
+  font-size: 16px;
+  color: $light-grey;
+}
+
+.final-category {
+  color: $dark-grey;
+}
