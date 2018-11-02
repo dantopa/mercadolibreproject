@@ -15,9 +15,7 @@
             <div class="status">
               {{getCondition(detail.condition)}} - {{detail.sold_quantity}} vendidos
             </div>
-            <div class="title">
-              {{detail.title}}
-            </div>
+            <div [innerHTML]="detail.title" class="title"></div>
             <div class="price">
               <span *ngIf="detail.price.currency === 'USD'" class="usd-currency">US</span>$
               <span>
