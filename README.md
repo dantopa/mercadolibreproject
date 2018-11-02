@@ -1,27 +1,27 @@
-# Mercadolibre
+# Proyecto MercadoLibre por Patricio D'Andrea
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.3.
+## Stack utilizado
+Se utilizó un stack basado en Angular 7 para el FrontEnd, y un servidor API REST creado 
+usando Express 4.16. Se decidió utilizar Angular en vez de otras librerías como React,
+por preferencias personales entre las que se encuentran el uso de Typescript para trabajar
+con tipado estático, y por otro lado la capacidad de Angular como Framework, proveyendo 
+inyección de dependencias para servicios, un cliente para generar boilerplate, integración
+con RxJS, entre otros.
 
-## Development server
+## Instalar y Correr
+Se requiere tener instalado Node v8.9 o superior, con NPM v. 5.5.1 o superior. Una vez clonado
+el proyecto y dentro del mismo, en una consola correr:
+```
+npm install
+node server.js
+```
+En una nueva consola luego:
+```
+npm start
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Finalmente se puede ver la aplicación a través de un navegador web entrando en:
+http://localhost:4200
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Y la API se encuentra corriendo en:
+http://localhost:8000/api
